@@ -24,9 +24,9 @@ module.exports = `
     }
  
     input PRODUCT_INPUT {
-        name: String
+        name: String!
         description: String
-        price: Float
+        price: Float!
         discount: Float
         category: String
         bucketName:String!

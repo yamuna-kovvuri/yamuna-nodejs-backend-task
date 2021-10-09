@@ -5,7 +5,7 @@ module.exports = `
   }
 
   type Mutation {    
-    SignIn(userName: String!, password: String!): USER_DATA
+    SignIn(email: String!, password: String!): USER_DATA
     SignUp(userName: String!, email: String!, password: String!): USER_DATA
   }
 `;

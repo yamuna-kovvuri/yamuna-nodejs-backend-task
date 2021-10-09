@@ -3,7 +3,7 @@ module.exports = (sequelize, DataTypes) => {
     'product',
     {
       public_id: { type: DataTypes.UUID, unique: true, allowNull: false },
-      name: { type: DataTypes.STRING },
+      name: { type: DataTypes.STRING, unique: true },
       description: { type: DataTypes.STRING },
       price: { type: DataTypes.DECIMAL(10, 2) },
       discount: { type: DataTypes.DECIMAL(10, 2) },

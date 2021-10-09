@@ -35,7 +35,7 @@ module.exports = {
     },
   },
   JWT_SECRET_TOKEN: process.env.JWT_SECRET_TOKEN || 'secret',
-  SECRET_ACCESS_KEY: process.env.SECRET_ACCESS_KEY || 'KoBvJqJhQc4jVTnIJVCij5Lgh7jYQcEs//QiDUx4',
-  ACCESS_KEY_ID: process.env.ACCESS_KEY_ID || 'AKIA4Q6SSKILSZVP4Y3Q',
-  REGION: process.env.REGION || 'us-east-2',
+  SECRET_ACCESS_KEY: process.env.SECRET_ACCESS_KEY,
+  ACCESS_KEY_ID: process.env.ACCESS_KEY_ID,
+  REGION: process.env.REGION,
 };

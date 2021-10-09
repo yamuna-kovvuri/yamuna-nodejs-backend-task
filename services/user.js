@@ -9,12 +9,12 @@ const { createToken } = require('./auth');
 const bcrypt = require('bcrypt');
 
 const signIn = async (payload) => {
-  const { userName, password } = payload;
+  const { email, password } = payload;
 
   const transaction = await sequelize.transaction();
 
   try {
-    const user = await UserModel.findOne({ where: { user_name: userName }, transaction });
+    const user = await UserModel.findOne({ where: { email }, transaction });
 
     if (!user) {
       await transaction.rollback();
@@ -69,7 +69,7 @@ const signUp = async (payload) => {
     });
 
     await transaction.commit();
-    const expiresIn = '60m';
+    const expiresIn = '1h';
     const { dataValues } = user;
     const doc = Helper.convertSnakeToCamel(dataValues);
     const createdToken = createToken(doc, expiresIn);
