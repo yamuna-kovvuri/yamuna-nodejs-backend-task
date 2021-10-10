@@ -53,6 +53,12 @@ const save = async (_, args, context) => {
     const data = {
       ...input,
     };
+    if(data.bucketName === ''){
+      return { errors: [ { name: 'error', message: 'please Enter Valid bucket name' } ] };
+    }
+    if( data.name === ''  ){
+      return { errors: [ { name: 'error', message: 'please Enter Valid product name' } ] };
+    }
     const { errors: err, doc } = await ProductService.save(data, authorization);
 
     if (doc) {
